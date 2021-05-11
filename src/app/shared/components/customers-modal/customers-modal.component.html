@@ -19,6 +19,38 @@
         <mdb-error *ngIf="name && name.invalid && (name.dirty || name.touched)">Name is required</mdb-error>
       </div>
 
+
+
+
+
+      <div class="md-form">
+        <input type="text" id="email" name="email" class="form-control" [(ngModel)]="customer.email" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
+        <label for="email">Email</label>
+        <mdb-error *ngIf="email && email.invalid && (email.dirty || email.touched)">Email is required</mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="number" id="phone" name="phone" class="form-control" [(ngModel)]="customer.phone" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
+        <label for="email">Phone</label>
+        <mdb-error *ngIf="phone && phone.invalid && (phone.dirty || email.touched)">Phone is required</mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="string" id="units" name="units" class="form-control" [(ngModel)]="customer.phone" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
+        <label for="units">Units</label>
+        <mdb-error *ngIf="units && units.invalid && (units.dirty || units.touched)">Phone is required</mdb-error>
+      </div>
+      <div class="md-form">
+        <input type="text" id="note" name="note" class="form-control" [(ngModel)]="customer.note"      #id="ngModel"  >
+        <label for="note">Note</label>
+         </div>
+       
+         <div class="md-form">
+          <input type="boolean" id="active" name="active" class="form-control" [(ngModel)]="customer.active"       #id="ngModel"  >
+          <label for="note">Active</label>
+           </div>
+
+
+
+
       <div class="md-form">
         <textarea type="text" id="description" name="description" class="md-textarea form-control" [(ngModel)]="customer.description" mdbInput mdbValidate [validateSuccess]="false" #description="ngModel" required></textarea>
         <label for="description">Description</label>

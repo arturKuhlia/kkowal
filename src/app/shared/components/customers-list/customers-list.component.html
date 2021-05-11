@@ -5,7 +5,10 @@
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>
-        <th>Actions</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Note</th>
+        <th>Active</th>
       </tr>
     </thead>
 
@@ -14,6 +17,10 @@
         <th scope="row">{{ customer.id }}</th>
         <td>{{ customer.name }}</td>
         <td>{{ customer.description }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.note }}</td>
+        <td>{{ customer.active }}</td>
         <td>
           <a (click)="onEdit(customer)" class="mr-2"><mdb-icon fas icon="edit"></mdb-icon></a>
           <a (click)="onDelete(customer)"><mdb-icon fas icon="trash"></mdb-icon></a>

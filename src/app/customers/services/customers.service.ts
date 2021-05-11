@@ -42,6 +42,11 @@ export class CustomersService {
         id: customer.id,
         name: customer.name,
         description: customer.description,
+        phone: customer.phone,
+        email: customer.email,
+        units: customer.units,
+        active: customer.active,
+        note: customer.note,
       }));
   }
 

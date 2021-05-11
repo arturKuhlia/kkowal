@@ -84,7 +84,12 @@ export class CustomersComponent implements OnInit, OnDestroy {
       key: customer.key,
       id: customer.id || null,
       name: customer.name || null,
-      description: customer.description || null
+      description: customer.description || null,
+      phone: customer.phone || null,
+      email: customer.email || null,
+      units: customer.units || null,
+      active: customer.active || null,
+      note: customer.note || null,
      };
     this.modalRef.content.customer = customerCopy;
 
