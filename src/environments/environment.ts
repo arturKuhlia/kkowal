@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
-  firebase: {}
+  firebase: { 
+    apiKey: "AIzaSyAEHHAvlunqM4u-xm2rWigNmAnPk4q_RGs",
+    authDomain: "kkowal-materials.firebaseapp.com",
+    projectId: "kkowal-materials",
+    storageBucket: "kkowal-materials.appspot.com",
+    messagingSenderId: "1097493786296",
+    appId: "1:1097493786296:web:4e370435d68a18cd604e4d",
+    measurementId: "G-2H0XCTJ427",
+    databaseURL: "https://kkowal-materials-default-rtdb.firebaseio.com"
+  
+  }
 };
 
 /*
