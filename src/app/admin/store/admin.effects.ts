@@ -91,7 +91,12 @@ export class AdminEffects {
               key: key,
               id: customer.id,
               name: customer.name,
-              description: customer.description
+              description: customer.description,
+              phone: customer.phone,
+              email: customer.email,
+              units: customer.units,
+              active: customer.active,
+              note: customer.note,
             };
           });
           return (new fromAdmin.UserCustomersLoaded({ uid: payload.uid, userCustomers: customersData }));
