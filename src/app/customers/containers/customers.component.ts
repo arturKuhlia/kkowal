@@ -68,7 +68,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   onAddCustomer() {
     this.modalRef = this.modalService.show(CustomersModalComponent, this.modalConfig);
 
-    this.modalRef.content.heading = 'Add new customer';
+    this.modalRef.content.heading = 'Add new purchaser';
     this.modalRef.content.customer.id = this.lastCustomerIndex + 1;
 
     this.modalRef.content.customerData.pipe(take(1)).subscribe( (customerData: Customer) => {
@@ -79,7 +79,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   openEditCustomerModal(customer: Customer) {
     this.modalRef = this.modalService.show(CustomersModalComponent, this.modalConfig);
 
-    this.modalRef.content.heading = 'Edit customer';
+    this.modalRef.content.heading = 'Edit purchaser';
     const customerCopy = {
       key: customer.key,
       id: customer.id || null,

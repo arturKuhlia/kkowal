@@ -4,7 +4,7 @@
   <!-- Navbar brand -->
   <mdb-navbar-brand>
       <a class="navbar-brand" routerLink="/">
-          <img src="https://mdbootstrap.com/img/Marketing/other/logo/logo-mdb-angular-small.png" height="30" alt="">
+      <h2>K Kowal</h2>  
       </a>
   </mdb-navbar-brand>
 
@@ -20,7 +20,7 @@
         <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/projects" routerLinkActive="active" mdbWavesEffect>Projects</a>
       </li>
       <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
-        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/customers" routerLinkActive="active" mdbWavesEffect>Tables</a>
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/customers" routerLinkActive="active" mdbWavesEffect>Purchasers</a>
       </li>
       <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
         <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/charts" routerLinkActive="active" mdbWavesEffect>Charts</a>
