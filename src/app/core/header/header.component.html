@@ -23,6 +23,12 @@
         <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/customers" routerLinkActive="active" mdbWavesEffect>Purchasers</a>
       </li>
       <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/suites" routerLinkActive="active" mdbWavesEffect>Suites</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
+        <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/materials" routerLinkActive="active" mdbWavesEffect>Materials</a>
+      </li>
+      <li *ngIf="isLoggedIn && !isLoading" class="nav-item">
         <a (click)="navbar.hide()" class="nav-link waves-light" routerLink="/charts" routerLinkActive="active" mdbWavesEffect>Charts</a>
       </li>
       <li *ngIf="isLoggedIn && !isLoading" class="nav-item">

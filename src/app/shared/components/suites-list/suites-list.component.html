@@ -1,0 +1,38 @@
+<div class="z-depth-1">
+  <table class="table  table-hover table-bordered table-responsive-md btn-table" mdbTable   >
+    <thead style="background-color: transparent">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Area</th>
+        <th>Purchasers</th>
+        <th>Categories</th>
+        <th>Active</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let suite of suites; trackBy: trackByFn">
+        <th scope="row">{{ suite.id }}</th>
+        <td>{{ suite.name }}</td>
+        <td>{{ suite.type }}</td>
+        <td>{{ suite.size }}</td>
+        <td>{{ suite.area }}</td>
+        <td><div *ngFor="let client of suite.clients"> {{ client.name }}</div></td>
+        <td>{{ suite.categories }}</td>
+
+        <td>{{ suite.active }}</td>
+        <td>{{ suite.note }}</td>
+
+        <td>
+          <a (click)="onEdit(suite)" class="mr-2"><mdb-icon fas icon="edit"></mdb-icon></a>
+          <a (click)="onDelete(suite)"><mdb-icon fas icon="trash"></mdb-icon></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

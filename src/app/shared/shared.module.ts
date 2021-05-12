@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { ProjectComponent } from './components/project/project.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { CustomersListComponent } from './components/customers-list/customers-list.component';
+import { SuitesListComponent } from './components/suites-list/suites-list.component';
+import { SuitesModalComponent } from './components/suites-modal/suites-modal.component';
+import { MaterialsModalComponent } from './components/materials-modal/materials-modal.component';
+import { MaterialsListComponent } from './components/materials-list/materials-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { CustomersListComponent } from './components/customers-list/customers-li
     ProjectModalComponent,
     ProjectsListComponent,
     ProjectComponent,
-    CustomersListComponent
+    CustomersListComponent,
+    SuitesListComponent,
+    SuitesModalComponent,
+    MaterialsListComponent,
+    MaterialsModalComponent
   ],
   imports: [
     CommonModule,
@@ -33,11 +41,13 @@ import { CustomersListComponent } from './components/customers-list/customers-li
     ButtonsModule,
     CardsModule
   ],
-  exports: [ProjectsListComponent, ProjectComponent, CustomersListComponent],
+  exports: [ProjectsListComponent, ProjectComponent, MaterialsListComponent, SuitesListComponent, CustomersListComponent],
   providers: [],
   entryComponents: [
     ConfirmModalComponent,
+    SuitesModalComponent,
     CustomersModalComponent,
+    MaterialsModalComponent,
     ProjectModalComponent
   ]
 })

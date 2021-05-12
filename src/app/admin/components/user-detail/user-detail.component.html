@@ -60,6 +60,8 @@
       </div>
     </div>
 
+    <!-- <app-suites-list *ngIf="!userCustomersLoading && customers" [customers]="customers" (customerDeleted)="onCustomerDelete($event)"></app-suites-list> -->
+
     <app-customers-list *ngIf="!userCustomersLoading && customers" [customers]="customers" (customerDeleted)="onCustomerDelete($event)"></app-customers-list>
   </mdb-card-body>
 </mdb-card>
