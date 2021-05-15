@@ -42,12 +42,15 @@ export class MaterialsService {
         id: material.id,
         name: material.name,
         type: material.type,
-        size: material.size,
-        area: material.area,
-        clients: material.clients,
+        price: material.price,
+        cost: material.cost,
+        options: material.options,
         active: material.active,
         note: material.note,
-         categories:material.categories
+        required:material.required,
+        option:material.option
+        
+          
          
 
       }));

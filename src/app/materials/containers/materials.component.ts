@@ -68,7 +68,7 @@ export class MaterialsComponent implements OnInit, OnDestroy {
   onAddMaterial() {
     this.modalRef = this.modalService.show(MaterialsModalComponent, this.modalConfig);
 
-    this.modalRef.content.heading = 'Add new purchaser';
+    this.modalRef.content.heading = 'Add new option/category';
     this.modalRef.content.material.id = this.lastMaterialIndex + 1;
 
     this.modalRef.content.materialData.pipe(take(1)).subscribe( (materialData: Material) => {
@@ -85,12 +85,13 @@ export class MaterialsComponent implements OnInit, OnDestroy {
       id: material.id || null,
       name: material.name || null,
       type: material.type || null,
-      size: material.size || null,
-      area: material.area || null,
-      clients: material.clients || null,
-      active: material.active || null,
-      note: material.note || null,
-       categories:material.categories || null,
+        price: material.price || null,
+        cost: material.cost || null,
+        options: material.options || null,
+        active: material.active || null,
+        note: material.note || null,
+        required:material.required || null,
+        option:material.option || null
   
      };
     this.modalRef.content.material = materialCopy;

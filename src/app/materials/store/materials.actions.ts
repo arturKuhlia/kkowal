@@ -2,46 +2,46 @@ import { Action } from '@ngrx/store';
 import { Material } from '../models/material.model';
 
 export enum MaterialsActionTypes {
-  CUSTOMERS_QUERY = '[Materials] Query',
-  CUSTOMERS_LOADED = '[Materials] Fetched',
+  MATERIALS_QUERY = '[Materials] Query',
+  MATERIALS_LOADED = '[Materials] Fetched',
 
-  CUSTOMERS_ADDED = '[Materials] Added',
-  CUSTOMERS_EDITED = '[Materials] Edited',
-  CUSTOMERS_DELETED = '[Materials] Deleted',
+  MATERIALS_ADDED = '[Materials] Added',
+  MATERIALS_EDITED = '[Materials] Edited',
+  MATERIALS_DELETED = '[Materials] Deleted',
 
-  CUSTOMERS_ERROR = '[Materials] Error'
+  MATERIALS_ERROR = '[Materials] Error'
 }
 
 export class MaterialsQuery implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_QUERY;
+  readonly type = MaterialsActionTypes.MATERIALS_QUERY;
 }
 
 export class MaterialsLoaded implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_LOADED;
+  readonly type = MaterialsActionTypes.MATERIALS_LOADED;
 
   constructor(public payload: { materials: Material[] }) {}
 }
 
 export class MaterialsAdded implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_ADDED;
+  readonly type = MaterialsActionTypes.MATERIALS_ADDED;
 
   constructor(public payload: { material: Material }) {}
 }
 
 export class MaterialsEdited implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_EDITED;
+  readonly type = MaterialsActionTypes.MATERIALS_EDITED;
 
   constructor(public payload: { material: Material }) {}
 }
 
 export class MaterialsDeleted implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_DELETED;
+  readonly type = MaterialsActionTypes.MATERIALS_DELETED;
 
   constructor(public payload: { material: Material }) {}
 }
 
 export class MaterialsError implements Action {
-  readonly type = MaterialsActionTypes.CUSTOMERS_ERROR;
+  readonly type = MaterialsActionTypes.MATERIALS_ERROR;
 
   constructor(public payload: { error: any }) {}
 }

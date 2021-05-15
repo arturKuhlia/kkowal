@@ -15,7 +15,7 @@
 
       <div class="md-form">
         <input type="text" id="name" name="name" class="form-control" [(ngModel)]="material.name" mdbInput mdbValidate [validateSuccess]="false" #name="ngModel" required>
-        <label for="name">Material #</label>
+        <label for="name">Name</label>
         <mdb-error *ngIf="name && name.invalid && (name.dirty || name.touched)">Name is required</mdb-error>
       </div>
 
@@ -28,37 +28,49 @@
       </div>
       
       <div class="md-form">
-        <input type="text" id="size" name="size" class="form-control" [(ngModel)]="material.size" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
-        <label for="size">Size</label>
-        <mdb-error *ngIf="size && size.invalid && (size.dirty || size.touched)">Size is required</mdb-error>
+        <input type="number" id="cost" name="cost" class="form-control" [(ngModel)]="material.cost" mdbInput    #id="ngModel" >
+        <label for="cost">Cost</label>
       </div>
       <div class="md-form">
-        <input type="number" id="area" name="area" class="form-control" [(ngModel)]="material.area" mdbInput mdbValidate [validateSuccess]="false" #id="ngModel" required>
-        <label for="area">Area</label>
-        <mdb-error *ngIf="area && area.invalid && (area.dirty || area.touched)">Area is required</mdb-error>
+        <input type="number" id="multiplier" name="multiplier" class="form-control" [(ngModel)]="material.multiplier" mdbInput    #id="ngModel" >
+        <label for="multiplier">Multiplier</label>
       </div>
       <div class="md-form">
-        <input type="text" id="note" name="note" class="form-control" [(ngModel)]="material.note"    mdbInput  #id="ngModel"  >
-        <label for="note">Note</label>
-         </div>
-
-         <div class="md-form">
-          <input type="text" id="clients" name="clients" class="form-control" [(ngModel)]="material.clients"    mdbInput  #id="ngModel"  >
-          <label for="clients">Purchasers</label>
-           </div>
-
+        <input type="number" id="price" name="price" class="form-control" [(ngModel)]="material.price" mdbInput    #id="ngModel" >
+        <label for="price">Price</label>
+      </div>
+    
 
            <div class="md-form">
-            <input type="text" id="categories" name="categories" class="form-control" [(ngModel)]="material.categories"    mdbInput  #id="ngModel"  >
-            <label for="categories">Categories</label>
+            <input type="text" id="option" name="option" class="form-control" [(ngModel)]="material.option"    mdbInput  #id="ngModel"  >
+            <label for="option">Option</label>
              </div>
        
-         <div class="md-form">
-          <input type = "checkbox"   id="active" name="active" class="form-control" [(ngModel)]="material.active"  mdbInput     #id="ngModel"  >
-          <label for="active">Active</label>
+         <div>
+          <input type = "checkbox"   id="active" name="active"  [(ngModel)]="material.active"  mdbInput     #id="ngModel"  >
+          <label for="active">	&nbsp; Active</label>
         </div>
 
-            
+        <div>
+          <input type = "required"   id="required" name="required"  [(ngModel)]="material.required"  mdbInput     #id="ngModel"  >
+          <label for="required">	&nbsp; Required</label>
+        </div>
+
+<div class="md-form">
+  <select multiple   id="options" name="options" class="form-control " [(ngModel)]="material.options"    mdbInput  #id="ngModel"  >  
+    <option *ngFor="let opt of materials" 
+    [value]="{key:opt.key, name:opt.name}" 
+   >
+  {{opt.name}}
+</option> 
+</select>
+           </div>
+
+        <div class="md-form">
+          <input type="text" id="note" name="note" class="form-control" [(ngModel)]="material.note"    mdbInput  #id="ngModel"  >
+          <label for="note">Note</label>
+           </div>
+        
      
     </form>
   </div>

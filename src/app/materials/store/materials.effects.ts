@@ -18,7 +18,7 @@ export class MaterialsEffects {
 
   @Effect()
   query$ = this.actions$.pipe(
-    ofType(MaterialsActionTypes.CUSTOMERS_QUERY),
+    ofType(MaterialsActionTypes.MATERIALS_QUERY),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([, user]: any) => this.materialsService.get(user.uid)
       .pipe(
@@ -29,14 +29,16 @@ export class MaterialsEffects {
             return {
               key: key,
               id: material.id,
-              name: material.name,
-              type: material.type,
-              size: material.size,
-              area: material.area,
-              clients: material.clients,
-              active: material.active,
-              note: material.note,
-               categories:material.categories
+        name: material.name,
+        type: material.type,
+        price: material.price,
+        cost: material.cost,
+        options: material.options,
+        active: material.active,
+        note: material.note,
+        required:material.required,
+        option:material.option
+
             };
           });
           return (new fromMaterials.MaterialsLoaded({ materials: materialsData }));
@@ -50,7 +52,7 @@ export class MaterialsEffects {
 
   @Effect({ dispatch: false })
   added$ = this.actions$.pipe(
-    ofType(MaterialsActionTypes.CUSTOMERS_ADDED),
+    ofType(MaterialsActionTypes.MATERIALS_ADDED),
     map((action: fromMaterials.MaterialsAdded) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.materialsService.add(payload.material, user.uid))
@@ -58,7 +60,7 @@ export class MaterialsEffects {
 
   @Effect({ dispatch: false })
   edit$ = this.actions$.pipe(
-    ofType(MaterialsActionTypes.CUSTOMERS_EDITED),
+    ofType(MaterialsActionTypes.MATERIALS_EDITED),
     map((action: fromMaterials.MaterialsEdited) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.materialsService.update(payload.material, user.uid)
@@ -71,7 +73,7 @@ export class MaterialsEffects {
 
   @Effect({ dispatch: false })
   delete$ = this.actions$.pipe(
-    ofType(MaterialsActionTypes.CUSTOMERS_DELETED),
+    ofType(MaterialsActionTypes.MATERIALS_DELETED),
     map((action: fromMaterials.MaterialsDeleted) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.materialsService.delete(payload.material, user.uid))

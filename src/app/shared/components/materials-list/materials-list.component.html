@@ -2,36 +2,38 @@
   <table class="table  table-hover table-bordered table-responsive-md btn-table" mdbTable   >
     <thead style="background-color: transparent">
       <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Size</th>
-        <th>Area</th>
-        <th>Purchasers</th>
-        <th>Categories</th>
-        <th>Active</th>
-        <th>Note</th>
+        <th>Category</th>
+        
       </tr>
     </thead>
 
     <tbody>
 
       <tr *ngFor="let material of materials; trackBy: trackByFn">
-        <th scope="row">{{ material.id }}</th>
-        <td>{{ material.name }}</td>
-        <td>{{ material.type }}</td>
-        <td>{{ material.size }}</td>
-        <td>{{ material.area }}</td>
-        <td>{{ material.clients }}</td>
-        <td>{{ material.categories }}</td>
+        <th scope="row">{{ material.name }}   
 
-        <td>{{ material.active }}</td>
-        <td>{{ material.note }}</td>
-
-        <td>
           <a (click)="onEdit(material)" class="mr-2"><mdb-icon fas icon="edit"></mdb-icon></a>
           <a (click)="onDelete(material)"><mdb-icon fas icon="trash"></mdb-icon></a>
+        </th>
+
+      
+
+        <td> 
+<p>Selected</p>
+<p>{{item}}</p>
+<div *ngIf="material.options"> <p *ngFor="let item of material.options" (click)="selected(item.id)"> {{item.name}}</p></div>          
+
+        
+        
         </td>
+        
+
+        <td>
+     
+         
+        </td>
+        <td>
+           {{finalCost}} </td>
       </tr>
     </tbody>
   </table>

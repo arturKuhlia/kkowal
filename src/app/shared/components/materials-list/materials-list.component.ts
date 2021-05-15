@@ -13,8 +13,15 @@ export class MaterialsListComponent implements OnInit {
 
   constructor() { }
 
+selectedItem:any;
+
   ngOnInit() {
   }
+
+//    selected(id){
+// //get material by id, return
+
+//    }
 
   onEdit(material: Material) {
     this.materialEdited.emit(material);
