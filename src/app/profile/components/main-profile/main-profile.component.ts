@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../../../auth/models/user.model';
+import { User } from '../../../_auth/models/user.model';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({

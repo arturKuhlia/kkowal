@@ -1,0 +1,38 @@
+<div class="z-depth-1">
+  <table class="table  table-hover table-bordered table-responsive-md btn-table" mdbTable   >
+    <thead style="background-color: transparent">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Size</th>
+        <th>Area</th>
+        <th>Purchasers</th>
+        <th>Categories</th>
+        <th>Active</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let option of options; trackBy: trackByFn">
+        <th scope="row">{{ option.id }}</th>
+        <td>{{ option.name }}</td>
+        <td>{{ option.type }}</td>
+        <td>{{ option.size }}</td>
+        <td>{{ option.area }}</td>
+        <td><div *ngFor="let client of option.clients"> {{ client.name }}</div></td>
+        <td>{{ option.categories }}</td>
+
+        <td>{{ option.active }}</td>
+        <td>{{ option.note }}</td>
+
+        <td>
+          <a (click)="onEdit(option)" class="mr-2"><mdb-icon fas icon="edit"></mdb-icon></a>
+          <a (click)="onDelete(option)"><mdb-icon fas icon="trash"></mdb-icon></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -9,7 +9,7 @@ import { ProjectsService } from '../services/projects.service';
 
 import * as fromProjects from './../store/projects.actions';
 import { AppState } from '../../reducers/index';
-import { getUser } from '../../auth/store/auth.selectors';
+import { getUser } from '../../_auth/store/auth.selectors';
 
 @Injectable()
 export class ProjectsEffects {

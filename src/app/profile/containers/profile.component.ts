@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../../auth/models/user.model';
+import { User } from '../../_auth/models/user.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../reducers/index';
-import { getUser } from '../../auth/store/auth.selectors';
-import * as fromAuth from './../../auth/store/auth.actions';
+import { getUser } from '../../_auth/store/auth.selectors';
+import * as fromAuth from '../../_auth/store/auth.actions';
 
 @Component({
   selector: 'app-profile',

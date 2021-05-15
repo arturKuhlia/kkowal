@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ChartsService } from '../services/charts.service';
 
-import * as fromCharts from './../store/charts.actions';
-import { ChartsActionTypes } from './../store/charts.actions';
+import * as fromCharts from './charts.actions';
+import { ChartsActionTypes } from './charts.actions';
 import { map, switchMap, catchError, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Store, select } from '@ngrx/store';

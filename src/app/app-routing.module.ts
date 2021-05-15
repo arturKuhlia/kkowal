@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { RegisterComponent } from './auth/components/register/register.component';
-import { HomeComponent } from './core/home/home.component';
-import { LoginComponent } from './auth/components/login/login.component';
-import { AuthGuard } from './auth/guards/auth.guard';
-import { MainComponent } from './core/main/main.component';
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { AdminComponent } from './admin/containers/admin/admin.component';
-import { AdminGuard } from './admin/guard/admin.guard';
+import { RegisterComponent } from './_auth/components/register/register.component';
+import { HomeComponent } from './_core/home/home.component';
+import { LoginComponent } from './_auth/components/login/login.component';
+import { AuthGuard } from './_auth/guards/auth.guard';
+import { MainComponent } from './_core/main/main.component';
+import { PageNotFoundComponent } from './_core/page-not-found/page-not-found.component';
+import { AdminComponent } from './_admin/containers/admin/admin.component';
+import { AdminGuard } from './_admin/guard/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
@@ -16,6 +16,8 @@ const routes: Routes = [
     { path: 'customers', loadChildren: './customers/customers.module#CustomersModule', canActivate: [AuthGuard]},
     { path: 'suites', loadChildren: './suites/suites.module#SuitesModule', canActivate: [AuthGuard]},
     { path: 'materials', loadChildren: './materials/materials.module#MaterialsModule', canActivate: [AuthGuard]},
+    { path: 'options', loadChildren: './options/options.module#OptionsModule', canActivate: [AuthGuard]},
+    { path: 'selections', loadChildren: './selections/selections.module#SelectionsModule', canActivate: [AuthGuard]},
  
     { path: 'profile', loadChildren: './profile/profile.module#ProfileModule', canActivate: [AuthGuard] },
     { path: 'charts', loadChildren: './charts/charts.module#ChartsDataModule', canActivate: [AuthGuard] },

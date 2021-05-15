@@ -8,8 +8,8 @@ import { Suite } from '../models/suite.model';
 import { Subscription, Observable } from 'rxjs';
 import { getSuites, getIsLoading } from '../store/suites.selectors';
 import { take, map } from 'rxjs/operators';
-import { ConfirmModalComponent } from '../../shared/components/confirm-modal/confirm-modal.component';
-import { SuitesModalComponent } from '../../shared/components/suites-modal/suites-modal.component';
+import { ConfirmModalComponent } from '../../_shared/components/confirm-modal/confirm-modal.component';
+import { SuitesModalComponent } from '../../_shared/components/suites-modal/suites-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({

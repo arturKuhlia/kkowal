@@ -4,20 +4,20 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './_core/core.module';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './_auth/auth.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { SharedModule } from './shared/shared.module';
-import { AdminModule } from './admin/admin.module';
+import { SharedModule } from './_shared/shared.module';
+import { AdminModule } from './_admin/admin.module';
 import { ModalModule } from 'angular-bootstrap-md';
 
 @NgModule({

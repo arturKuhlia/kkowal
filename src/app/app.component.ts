@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from './reducers';
 import { Observable } from 'rxjs';
-import { User } from './auth/models/user.model';
-import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin } from './auth/store/auth.selectors';
+import { User } from './_auth/models/user.model';
+import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin } from './_auth/store/auth.selectors';
 
-import * as fromAuth from './auth/store/auth.actions';
+import * as fromAuth from './_auth/store/auth.actions';
 
 @Component({
   selector: 'app-root',

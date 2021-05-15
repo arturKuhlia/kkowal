@@ -8,8 +8,8 @@ import { Material } from '../models/material.model';
 import { Subscription, Observable } from 'rxjs';
 import { getMaterials, getIsLoading } from '../store/materials.selectors';
 import { take, map } from 'rxjs/operators';
-import { ConfirmModalComponent } from '../../shared/components/confirm-modal/confirm-modal.component';
-import { MaterialsModalComponent } from '../../shared/components/materials-modal/materials-modal.component';
+import { ConfirmModalComponent } from '../../_shared/components/confirm-modal/confirm-modal.component';
+import { MaterialsModalComponent } from '../../_shared/components/materials-modal/materials-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({

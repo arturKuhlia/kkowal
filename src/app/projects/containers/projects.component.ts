@@ -7,8 +7,8 @@ import * as fromProjects from './../store/projects.actions';
 import { Observable } from 'rxjs';
 import { getProjects, getAllLoaded } from '../store/projects.selectors';
 import { take, map } from 'rxjs/operators';
-import { ConfirmModalComponent } from '../../shared/components/confirm-modal/confirm-modal.component';
-import { ProjectModalComponent } from '../../shared/components/project-modal/project-modal.component';
+import { ConfirmModalComponent } from '../../_shared/components/confirm-modal/confirm-modal.component';
+import { ProjectModalComponent } from '../../_shared/components/project-modal/project-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({

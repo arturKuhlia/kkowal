@@ -4,10 +4,10 @@ import {
   ActionReducer,
   Action
 } from '@ngrx/store';
-import * as fromAuth from '../auth/store/auth.reducer';
-import * as fromAdmin from '../admin/store/admin.reducer';
-import { AuthState } from '../auth/store/auth.state';
-import { AdminState } from '../admin/store/admin.state';
+import * as fromAuth from '../_auth/store/auth.reducer';
+import * as fromAdmin from '../_admin/store/admin.reducer';
+import { AuthState } from '../_auth/store/auth.state';
+import { AdminState } from '../_admin/store/admin.state';
 
 export interface AppState {
   auth: AuthState;

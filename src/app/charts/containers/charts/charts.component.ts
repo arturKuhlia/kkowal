@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../reducers/index';
 
-import * as fromCharts from './../../store/charts.actions';
+import * as fromCharts from '../../store/charts.actions';
 import { Subscription, Observable } from 'rxjs';
 import { getLineChartData, getBarChartData, getIsLoading } from '../../store/charts.selectors';
 

@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { SuitesEffects } from './store/suites.effects';
 import { SuitesRoutingModule } from './suites-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../_shared/shared.module';
 
 @NgModule({
   imports: [

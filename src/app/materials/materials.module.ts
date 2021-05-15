@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { MaterialsEffects } from './store/materials.effects';
 import { MaterialsRoutingModule } from './materials-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../_shared/shared.module';
 
 @NgModule({
   imports: [

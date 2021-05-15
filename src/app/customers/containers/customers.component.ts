@@ -8,8 +8,8 @@ import { Customer } from '../models/customer.model';
 import { Subscription, Observable } from 'rxjs';
 import { getCustomers, getIsLoading } from '../store/customers.selectors';
 import { take, map } from 'rxjs/operators';
-import { ConfirmModalComponent } from '../../shared/components/confirm-modal/confirm-modal.component';
-import { CustomersModalComponent } from '../../shared/components/customers-modal/customers-modal.component';
+import { ConfirmModalComponent } from '../../_shared/components/confirm-modal/confirm-modal.component';
+import { CustomersModalComponent } from '../../_shared/components/customers-modal/customers-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({

@@ -9,7 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { CustomersEffects } from './store/customers.effects';
 import { CustomersRoutingModule } from './customers-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../_shared/shared.module';
 
 @NgModule({
   imports: [
