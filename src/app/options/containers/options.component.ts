@@ -83,14 +83,9 @@ export class OptionsComponent implements OnInit, OnDestroy {
     const optionCopy = {
       key: option.key,
       id: option.id || null,
-      name: option.name || null,
-      type: option.type || null,
-      size: option.size || null,
-      area: option.area || null,
-      clients: option.clients || null,
       active: option.active || null,
-      note: option.note || null,
-       categories:option.categories || null,
+      choice: option.choice || null,
+      options:option.options || null
   
      };
     this.modalRef.content.option = optionCopy;

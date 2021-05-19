@@ -18,7 +18,7 @@ export class OptionsEffects {
 
   @Effect()
   query$ = this.actions$.pipe(
-    ofType(OptionsActionTypes.CUSTOMERS_QUERY),
+    ofType(OptionsActionTypes.OPTIONS_QUERY),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([, user]: any) => this.optionsService.get(user.uid)
       .pipe(
@@ -29,14 +29,11 @@ export class OptionsEffects {
             return {
               key: key,
               id: option.id,
-              name: option.name,
-              type: option.type,
-              size: option.size,
-              area: option.area,
-              clients: option.clients,
               active: option.active,
-              note: option.note,
-               categories:option.categories
+              choice: option.choice,
+              
+              options: option.options,
+              
             };
           });
           return (new fromOptions.OptionsLoaded({ options: optionsData }));
@@ -50,7 +47,7 @@ export class OptionsEffects {
 
   @Effect({ dispatch: false })
   added$ = this.actions$.pipe(
-    ofType(OptionsActionTypes.CUSTOMERS_ADDED),
+    ofType(OptionsActionTypes.OPTIONS_ADDED),
     map((action: fromOptions.OptionsAdded) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.optionsService.add(payload.option, user.uid))
@@ -58,7 +55,7 @@ export class OptionsEffects {
 
   @Effect({ dispatch: false })
   edit$ = this.actions$.pipe(
-    ofType(OptionsActionTypes.CUSTOMERS_EDITED),
+    ofType(OptionsActionTypes.OPTIONS_EDITED),
     map((action: fromOptions.OptionsEdited) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.optionsService.update(payload.option, user.uid)
@@ -71,7 +68,7 @@ export class OptionsEffects {
 
   @Effect({ dispatch: false })
   delete$ = this.actions$.pipe(
-    ofType(OptionsActionTypes.CUSTOMERS_DELETED),
+    ofType(OptionsActionTypes.OPTIONS_DELETED),
     map((action: fromOptions.OptionsDeleted) => action.payload),
     withLatestFrom(this.store.pipe(select(getUser))),
     switchMap(([payload, user]: any) => this.optionsService.delete(payload.option, user.uid))

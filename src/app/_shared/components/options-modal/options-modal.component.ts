@@ -4,13 +4,13 @@ import { Option } from '../../../options/models/option.model';
 
 import { Observable, Subject, Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
-import { Customer } from 'src/app/customers/models/customer.model';
+import { Material } from 'src/app/materials/models/material.model';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/reducers';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { getCustomers } from 'src/app/customers/store/customers.selectors';
+import { getMaterials } from 'src/app/materials/store/materials.selectors';
 import { map } from 'rxjs/operators';
-import * as fromCustomers from 'src/app/customers/store/customers.actions';
+import * as fromMaterials from 'src/app/materials/store/materials.actions';
 import { getIsLoading } from 'src/app/_auth/store/auth.selectors';
  
 
@@ -22,20 +22,18 @@ import { getIsLoading } from 'src/app/_auth/store/auth.selectors';
 })
 export class OptionsModalComponent implements OnInit {
   @ViewChild('optionForm', { static: true }) optionForm: NgForm;
-
+  filterarg:string =""
   heading: string;
   option: Option = {};
 
   optionData: Subject<Option> = new Subject();
 
-  lastCustomerIndex: number;
+  lastMaterialIndex: number;
 
   isLoading$: Observable<boolean>;
-  customers: Customer[] | null;
-  array:any[]=[];
-
-  customersSub: Subscription;
-
+  materials: Material[] | null;
+  optionTypes:any[]=["color","finish","material", "a", "b"];
+  materialsSub: Subscription;
 
   constructor(public modalRef: MDBModalRef,  private store: Store<AppState>, private afAuth: AngularFireAuth) { }
 
@@ -43,23 +41,23 @@ export class OptionsModalComponent implements OnInit {
 
     this.isLoading$ = this.store.select(getIsLoading);
 
-    this.customersSub = this.store.select(getCustomers).pipe(
-      map((customers: Customer[]) => {
-        if (this.user && !customers) {
-          this.store.dispatch(new fromCustomers.CustomersQuery());
+    this.materialsSub = this.store.select(getMaterials).pipe(
+      map((materials: Material[]) => {
+        if (this.user && !materials) {
+          this.store.dispatch(new fromMaterials.MaterialsQuery());
         }
-        return customers;
+        return materials;
       })
     )
-      .subscribe((customers: Customer[]) => {
-        if (customers && customers.length !== 0) {
-          const index: number = Number(customers[customers.length - 1].id);
-          this.lastCustomerIndex = index;
+      .subscribe((materials: Material[]) => {
+        if (materials && materials.length !== 0) {
+          const index: number = Number(materials[materials.length - 1].id);
+          this.lastMaterialIndex = index;
         } else {
-          this.lastCustomerIndex = 0;
+          this.lastMaterialIndex = 0;
         }
 
-        this.customers = customers;
+        this.materials = materials;
       })
     }
 
@@ -67,10 +65,12 @@ export class OptionsModalComponent implements OnInit {
     return this.afAuth.auth.currentUser;
   }
 
-//   AddtoArray(feature:any){
-//     this.array.push(feature);
-// }
-  onSave() {
+filter(item:any){
+ this.filterarg= item
+}
+ 
+ 
+onSave() {
     if (this.optionForm.valid) {
       this.optionData.next(this.option);
       this.modalRef.hide();

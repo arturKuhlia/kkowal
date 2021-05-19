@@ -22,6 +22,7 @@ import { SelectionsListComponent } from './components/selections-list /selection
 import { OptionsListComponent } from './components/options-list/options-list.component';
 import { SelectionsModalComponent } from './components/selections-modal/selections-modal.component';
 import { OptionsModalComponent } from './components/options-modal/options-modal.component';
+import { FilterPipe } from './components/options-modal/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { OptionsModalComponent } from './components/options-modal/options-modal.
     SelectionsModalComponent,
     OptionsListComponent,
     OptionsModalComponent,
+    FilterPipe,
    
   ],
   imports: [

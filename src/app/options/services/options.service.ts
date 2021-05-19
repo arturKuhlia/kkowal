@@ -40,17 +40,20 @@ export class OptionsService {
     return of(this.db.object(`options/${userId}/` + option.key)
       .update({
         id: option.id,
-        name: option.name,
-        type: option.type,
-        size: option.size,
-        area: option.area,
-        clients: option.clients,
         active: option.active,
-        note: option.note,
-        categories:option.categories
+        choice: option.choice,
+      
+        options: option.options,
+       
          
 
       }));
+  }
+
+
+  updateParent(option: Option, parent:any, userId: string) {
+    this.db.list(`options/${userId}/` + parent.key + '/options').push(option)
+    
   }
 
   delete(option: Option, userId: string) {

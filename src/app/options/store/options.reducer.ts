@@ -4,20 +4,20 @@ import { OptionsActions, OptionsActionTypes } from './options.actions';
 export function optionsReducer(state = optionsInitialState, action: OptionsActions): OptionsState {
   switch (action.type) {
 
-    case OptionsActionTypes.CUSTOMERS_QUERY: {
+    case OptionsActionTypes.OPTIONS_QUERY: {
       return Object.assign({}, state, {
         isLoading: true,
       });
     }
 
-    case OptionsActionTypes.CUSTOMERS_LOADED: {
+    case OptionsActionTypes.OPTIONS_LOADED: {
       return Object.assign({}, state, {
         options: action.payload.options,
         isLoading: false,
       });
     }
 
-    case OptionsActionTypes.CUSTOMERS_ERROR: {
+    case OptionsActionTypes.OPTIONS_ERROR: {
       return Object.assign({}, state, {
         isLoading: false,
         error: action.payload.error
