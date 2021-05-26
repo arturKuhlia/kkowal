@@ -1,0 +1,54 @@
+<ng-container *ngIf="cat.key">
+
+  
+  <p>
+    <a (click)="remove(cat.key)">
+      <mdb-icon fas icon="trash"></mdb-icon>
+    </a>
+<select >
+  <option *ngFor="let option of options">      <a (click)="choose(option)"> View</a>
+    <a *ngIf="cat.required" (click)="require(false, option)"> Required </a>
+    <a *ngIf="!cat.required" (click)="require(true, option)"> Not Required</a>    </option>
+</select>
+
+
+
+
+    <!-- Below options  -->
+  <p>Select Option</p>
+    <form #subStructureForm="ngForm">
+
+    <p>Select type of record</p>
+    <select id="type" name="type" placeholder="Type" [(ngModel)]="structure.type" mdbInput mdbValidate
+      [validateSuccess]="false" #id="ngModel" required>
+
+
+      <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+    </select>
+    <mdb-error *ngIf="type && type.invalid && (type.dirty || type.touched)">Type is required</mdb-error>
+    <p> <input type="checkbox" id="active" name="active" [(ngModel)]="structure.active" #id="ngModel">
+      &nbsp; <label for="active">Active</label>
+    </p>
+    <p>Select Option</p>
+    <select name="material" id="material" [(ngModel)]="structure.clients" mdbInput #id="ngModel">
+      <option *ngFor="let mat of mats" [ngValue]="mat">{{mat.name}}</option>
+    </select>
+
+    <p> <button type="button" mdbBtn color="red" class="relative waves-light" mdbWavesEffect
+        (click)="onSave(subStructureForm)">Save</button>
+    </p>
+
+  </form>
+
+  <button *ngIf="open" (click)="open= false" mdbBtn size="sm" color="primary">Close</button>
+  <button *ngIf="!open" (click)="open= true" mdbBtn size="sm" color="primary"> Add new</button>
+
+ 
+</ng-container>
+
+<ng-container *ngIf="categ">
+  <app-row  [catKey]="categ.key" [mats]="materials"></app-row>
+</ng-container>
+
+
+ 

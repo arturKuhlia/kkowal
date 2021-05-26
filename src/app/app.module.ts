@@ -19,9 +19,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { SharedModule } from './_shared/shared.module';
 import { AdminModule } from './_admin/admin.module';
 import { ModalModule } from 'angular-bootstrap-md';
-
+ 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent  ],
   imports: [
     BrowserModule,
     AuthModule,
@@ -45,6 +45,7 @@ import { ModalModule } from 'angular-bootstrap-md';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([])
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ 
 })
 export class AppModule {}

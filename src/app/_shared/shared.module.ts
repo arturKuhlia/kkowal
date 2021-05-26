@@ -22,15 +22,19 @@ import { SelectionsListComponent } from './components/selections-list /selection
 import { OptionsListComponent } from './components/options-list/options-list.component';
 import { SelectionsModalComponent } from './components/selections-modal/selections-modal.component';
 import { OptionsModalComponent } from './components/options-modal/options-modal.component';
-import { FilterPipe } from './components/options-modal/filter.pipe';
+import { FilterPipe } from './components/options-modal/filter.pipe'; 
+import { StructureComponent } from '../structure/structure.component';
+import { RowComponent } from '../structure/row/row.component';
 
 @NgModule({
   declarations: [
-    ConfirmModalComponent,
+        ConfirmModalComponent,
     CustomersModalComponent,
     ProjectModalComponent,
     ProjectsListComponent,
     ProjectComponent,
+    StructureComponent,
+    RowComponent,
     CustomersListComponent,
     SuitesListComponent,
     SuitesModalComponent,
@@ -52,7 +56,7 @@ import { FilterPipe } from './components/options-modal/filter.pipe';
     ButtonsModule,
     CardsModule
   ],
-  exports: [ProjectsListComponent,
+  exports: [ProjectsListComponent, StructureComponent, RowComponent, 
     ProjectComponent, OptionsListComponent,  SelectionsListComponent, MaterialsListComponent, SuitesListComponent, CustomersListComponent],
   providers: [],
   entryComponents: [

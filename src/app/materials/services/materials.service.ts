@@ -17,8 +17,11 @@ export class MaterialsService {
     }
   }
 
+  // add(material: Material, userId: string) {
   add(material: Material, userId: string) {
-    const materials = this.db.list(`materials/${userId}`);
+    console.log(userId);
+     
+    const materials = this.db.list(`materials`);
     return materials.push(material);
   }
 
@@ -27,17 +30,19 @@ export class MaterialsService {
 
     if (userId) {
       materials.forEach( (material: Material) => {
-        this.db.list(`materials/${userId}`).push(material);
+        this.db.list(`materials/`).push(material);
       });
     }
   }
 
   get(userId: string) {
-    return this.db.list(`materials/${userId}`).snapshotChanges();
+    console.log(userId);
+    return this.db.list(`materials`).snapshotChanges();
   }
 
   update(material: Material, userId: string) {
-    return of(this.db.object(`materials/${userId}/` + material.key)
+    console.log(userId);
+    return of(this.db.object(`materials/` + material.key)
       .update({
         id: material.id,
         name: material.name,
@@ -54,6 +59,7 @@ export class MaterialsService {
   }
 
   delete(material: Material, userId: string) {
-    return this.db.object(`materials/${userId}/` + material.key).remove();
+    console.log(userId);
+    return this.db.object(`materials/` + material.key).remove();
   }
 }

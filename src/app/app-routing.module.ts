@@ -8,10 +8,12 @@ import { MainComponent } from './_core/main/main.component';
 import { PageNotFoundComponent } from './_core/page-not-found/page-not-found.component';
 import { AdminComponent } from './_admin/containers/admin/admin.component';
 import { AdminGuard } from './_admin/guard/admin.guard';
+import { StructureComponent } from './structure/structure.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
     { path: '', component: MainComponent},
+    { path: 'structure', component: StructureComponent, canActivate:[AuthGuard]},
     { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule', canActivate: [AuthGuard]},
     { path: 'customers', loadChildren: './customers/customers.module#CustomersModule', canActivate: [AuthGuard]},
     { path: 'suites', loadChildren: './suites/suites.module#SuitesModule', canActivate: [AuthGuard]},

@@ -1,0 +1,42 @@
+<div>
+  <h3>Options list</h3>
+  <p class="grey-text pt-3">Manage your option list</p>
+</div>
+
+<div class="container-fluid pt-5 pb-5">
+  <div class="pt-3 pb-5">
+    <h4>Add new Category</h4>
+    <form #structureForm="ngForm">
+
+      <p>Select type of record</p>
+      <!-- <select id="type" name="type" placeholder="Type" [(ngModel)]="structure.type" mdbInput mdbValidate
+        [validateSuccess]="false" #id="ngModel" required>
+
+
+        <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+      </select> -->
+      <mdb-error *ngIf="type && type.invalid && (type.dirty || type.touched)">Type is required</mdb-error>
+      <p> <input type="checkbox" id="active" name="active" [(ngModel)]="structure.active" #id="ngModel">
+        &nbsp; <label for="active">Active</label>
+      </p>
+      <p>Select Option</p>
+      <select name="material" id="material" [(ngModel)]="structure.clients" mdbInput #id="ngModel">
+        <option *ngFor="let mat of materials" [ngValue]="mat">{{mat.name}}</option>
+      </select>
+
+      <p> <button type="button" mdbBtn color="red" class="relative waves-light" mdbWavesEffect
+          (click)="onSave(structureForm)">Save</button>
+      </p>
+
+    </form>
+
+   
+        <tr *ngFor="let category of categories">
+          <app-row [catKey]="category.key" [mats]="materials"></app-row>
+        </tr>
+       
+
+     
+
+  </div>
+</div>
